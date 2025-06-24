@@ -97,19 +97,24 @@ Simulated data utilities are provided for experimentation and reproducibility.
 # Clone repository
 git clone https://github.com/your_username/MM-DLS-NSCLC.git
 cd MM-DLS-NSCLC
-
-# Install dependencies
+```
+## Install dependencies
+```bash
 pip install -r requirements.txt
+```
 ## Usage
 Training:
 ```bash
 python train_pipeline.py
+```
 Evaluation:
 ```bash
 python evaluate_pipeline.py
+```
 Example Forward Pass:
 ```bash
 python main.py
+```
 ## Model Performance (from publication)
 ### Histological Subtype Classification:
 
