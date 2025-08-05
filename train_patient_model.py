@@ -12,7 +12,6 @@ from LesionAttentionFusion import LesionAttentionFusion
 from ModelLesionEncoder import LesionEncoder
 from ModelSpaceEncoder import SpaceEncoder
 
-# 模拟数据集，每个患者切片数量不等（5–15）
 class VariableSliceMockDataset(Dataset):
     def __init__(self, num_patients=900, max_slices=15, img_shape=(1, 64, 64)):
         self.max_slices = max_slices
