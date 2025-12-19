@@ -117,6 +117,7 @@ Pretrained MM-DLS models are available for direct download:
 
 - **MM-DLS (Full multimodal, best checkpoint)**  
   [⬇️ Download Pretrained Model](https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=drive_link) Size 1.3 MB
+The MM-DLS model is intentionally lightweight (~1.3 MB), as it employs compact CNN encoders and MLP-based multimodal fusion rather than large pretrained backbones, enabling efficient deployment and fast inference.
 
 
 
