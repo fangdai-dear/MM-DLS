@@ -116,7 +116,7 @@ pip install -r requirements.txt
 Pretrained MM-DLS models are available for direct download:
 
 - **MM-DLS (Full multimodal, best checkpoint)**  
-  👉 **Download:** [MM-DLS pretrained best.pt](https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=sharing)
+  👉 **Download:** [MM-DLS pretrained best.pt]([https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=sharing](https://drive.google.com/drive/folders/1Rjrl-QVI_DqkEaXFBBCvp2H1mgpl4k_1?usp=drive_link))
 
 
 After downloading, place the model files under the `./MODEL/` directory:
