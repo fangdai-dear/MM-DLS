@@ -33,6 +33,12 @@ The framework supports both classification (adenocarcinoma vs squamous cell carc
 
 The overall MM-DLS system consists of:
 
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
+![CUDA](https://img.shields.io/badge/CUDA-11.8%2B-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Status](https://img.shields.io/badge/Status-Research-orange)
+
 1. **Segmentation Module (LungLesionSegmentor):**
    - Shared ResNet encoder to extract features from CT images.
    - Dual decoders for lung and lesion segmentation.
@@ -57,16 +63,16 @@ The overall MM-DLS system consists of:
 
 ## Code Structure
 
-- `ModelLesionEncoder.py`: Lesion image encoder
-- `ModelSpaceEncoder.py`: Lung space encoder
-- `LesionAttentionFusion.py`: Attention fusion module
-- `ClinicalFusionModel.py`: Patient-level fusion model
-- `CoxphLoss.py`: Cox proportional hazards loss
+- `ModelLesionEncoder.py`: Lesion image encoder extracting discriminative features from multi-slice tumor regions.
+- `ModelSpaceEncoder.py`: Lung space encoder modeling anatomical and spatial context beyond the lesion.
+- `LesionAttentionFusion.py`: Attention-based fusion module for adaptive integration of lesion and spatial features.
+- `ClinicalFusionModel.py`: Patient-level fusion network combining imaging features, radiomics, PET signals, and clinical variables.
+- `HierMM_DLS.py`：Core hierarchical multimodal deep learning model supporting multi-task learning: (1)Subtype classification; (2)TNM stage prediction; (3)DFS and OS modeling
+- `CoxphLoss.py`: Cox proportional hazards loss for survival modeling with censored data.
+- `PatientDataset.py`:Patient dataset loader supporting imaging, radiomics, PET, clinical variables, survival outcomes, and treatment labels.
 - `LungLesionSegmentation.py`: Lung-lesion segmentation model
-- `MultiSliceDataset.py`: Multi-slice dataset loader
-- `VariableSliceDataset.py`: Mock dataset generator for variable slice numbers
-- `train_pipeline.py`: Full training and evaluation pipeline (multi-task)
-- `main.py`: Example full pipeline instantiation and forward pass
+- `ImageDataLoader.py`: Image preprocessing and loading utilities for multi-slice inputs.
+- `plot_results.py`: Visualization utilities for Kaplan–Meier curves, hazard ratios, and survival analysis results.
 
 ---
 
@@ -95,25 +101,36 @@ Simulated data utilities are provided for experimentation and reproducibility.
 
 ```bash
 # Clone repository
+conda create -n mm_dls python=3.10 -y
+conda activate mm_dls
 git clone https://github.com/your_username/MM-DLS-NSCLC.git
-cd MM-DLS-NSCLC
 ```
 ## Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 ## Usage
+
+### 🔽 Download Pretrained Models
+
+Pretrained MM-DLS models are available for direct download:
+
+- **MM-DLS (Full multimodal, best checkpoint)**  
+  Download from: **[XX Download Link]([[https://xx.xx/mm-dls-pretrained-best.pt](https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=sharing)](https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=sharing))**
+
+After downloading, place the model files under the `./MODEL/` directory:
+
 Training:
 ```bash
-python train_pipeline.py
+python train_patient_model.py
 ```
 Evaluation:
 ```bash
-python evaluate_pipeline.py
+python test.py
 ```
 Example Forward Pass:
 ```bash
-python main.py
+python run_sample.ipynb
 ```
 ## Model Performance (from publication)
 ### Histological Subtype Classification:
@@ -121,8 +138,6 @@ python main.py
 AUC: 0.85 ~ 0.92 across cohorts
 
 AP: 0.81 ~ 0.86
-
-Calibration: ECE < 0.06
 
 ### TNM Stage Prediction:
 
@@ -142,8 +157,6 @@ Superior to single modality models (clinical-only or imaging-only)
 
 ## Reference
 Please cite our original publication when using this work:
-
-
 
 License
 This project is licensed under the MIT License.
