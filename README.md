@@ -164,6 +164,8 @@ Please cite our original publication when using this work:
 License
 This project is licensed under the MIT License.
 
+⚠️ **Notice:** The pretrained model is shared solely for research validation purposes and **should not be used, distributed, or cited before the associated study is formally published**.
+
 Contact
 For any questions or collaborations, please contact:
 
