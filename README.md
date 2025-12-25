@@ -138,17 +138,17 @@ After downloading, place the model files under the `./MODEL/` directory:
 ```bash
 python train_patient_model.py
 ```
-###Evaluation:
+### Evaluation:
 ```bash
 python test.py
 ```
-###Demo：
-A minimal demo is provided via `run_sample.ipynb`, which performs a forward pass using simulated patient data.
+### Demo：
+- A minimal demo is provided via `run_sample.ipynb`, which performs a forward pass using simulated patient data.
 Run demo：
 ```bash
 jupyter notebook run_sample.ipynb
 ```
-Expected output：
+### Expected output：
 
 - Classification probability for LUAD vs LUSC
 
