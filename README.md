@@ -99,16 +99,27 @@ Simulated data utilities are provided for experimentation and reproducibility.
 
 ## Installation
 
+### System Requirements
+- Operating system: Linux (Ubuntu 18.04 / 20.04 recommended)
+- Python: 3.9–3.10
+- PyTorch: tested on 2.0–2.1
+- CUDA: tested on 11.8
+- Hardware: NVIDIA GPU with ≥8 GB memory recommended (CPU-only supported for inference)
+
 ```bash
 # Clone repository
 conda create -n mm_dls python=3.10 -y
 conda activate mm_dls
 git clone https://github.com/your_username/MM-DLS-NSCLC.git
 ```
+
 ## Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
+Typical installation time on a standard desktop with GPU support is approximately 5–10 minutes.
+
+
 ## Usage
 
 ### 🔽 Download Pretrained Models
@@ -123,18 +134,35 @@ The MM-DLS model is intentionally lightweight (~1.3 MB), as it employs compact C
 
 After downloading, place the model files under the `./MODEL/` directory:
 
-Training:
+### Training:
 ```bash
 python train_patient_model.py
 ```
-Evaluation:
+###Evaluation:
 ```bash
 python test.py
 ```
-Example Forward Pass:
+###Demo：
+A minimal demo is provided via `run_sample.ipynb`, which performs a forward pass using simulated patient data.
+Run demo：
 ```bash
-python run_sample.ipynb
+jupyter notebook run_sample.ipynb
 ```
+Expected output：
+
+- Classification probability for LUAD vs LUSC
+
+- Predicted TNM stage logits
+
+- DFS and OS risk scores
+
+Expected runtime
+
+- ~10–20 seconds per patient on a standard GPU
+
+- ~1–2 minutes on CPU-only systems
+
+
 ## Model Performance (from publication)
 ### Histological Subtype Classification:
 
