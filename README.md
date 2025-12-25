@@ -144,11 +144,11 @@ python test.py
 ```
 ### Demo：
 - A minimal demo is provided via `run_sample.ipynb`, which performs a forward pass using simulated patient data.
-Run demo：
+- Run demo：
 ```bash
 jupyter notebook run_sample.ipynb
 ```
-### Expected output：
+#### Expected output：
 
 - Classification probability for LUAD vs LUSC
 
@@ -156,7 +156,7 @@ jupyter notebook run_sample.ipynb
 
 - DFS and OS risk scores
 
-Expected runtime
+ #### Expected runtime
 
 - ~10–20 seconds per patient on a standard GPU
 
