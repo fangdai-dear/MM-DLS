@@ -69,20 +69,36 @@ The framework further performs:
 ```
 MM-DLS/
 │
-├── mm_dls/                    # Core model architecture and dataset classes
+├── mm_dls/                                # Core model architecture and dataset classes
+│   ├── ClinicalFusionModel.py
+│   ├── CoxphLoss.py
+│   ├── FakePatientDataset.py
+│   ├── HierMM_DLS.py
+│   ├── ImageDataLoader.py
+│   ├── LesionAttentionFusion.py
+│   ├── ModelLesionEncoder.py
+│   ├── ModelSpaceEncoder.py
+│   ├── PatientDataset.py
+│   ├── __init__.py
+│   ├── plot_results.py
+│   └── readme.md
 │
-├── MODELS/                    # Pretrained or auxiliary model components
+├── MODELS/                                # Pretrained or auxiliary model components
+│   ├── best_model.pt
+│   └── models.md
 │
-├── train_patient_model.py     # Main training script
-├── test.py                    # Minimal pipeline test
-├── run_sample.ipynb           # Example notebook for running inference
+├── baselines/                             # Baseline models
+│   ├── ct_cnn_survival.py
+│   └── radiomics_cox.py
 │
-├── README.md
-├── requirements.txt
-├── LICENSE
-├── CITATION.cff
-│
-└── docs/
+├── train_patient_model.py                 # Main training script
+├── test.py                                # Minimal pipeline test
+├── run_sample.ipynb                       # Example notebook for running inference
+├── README.md                              # Main documentation
+├── requirements.txt                       # Dependencies
+├── LICENSE                                # License information
+├── CITATION.cff                           # Citation information
+└── docs/                                  # Additional documentation
     ├── dataset_format.md
     └── reproduce_results.md
 ```
