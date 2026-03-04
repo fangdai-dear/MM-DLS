@@ -511,11 +511,11 @@ All baseline experiments were conducted using the same training pipeline, datase
 
 The source code used for model development and analysis is publicly available at:
 ```
-[https://github.com/fangdai-dear/MM-DLS](https://github.com/fangdai-dear/MM-DLS/)
+https://github.com/fangdai-dear/MM-DLS
 ```
 A citable archived version of the repository is available via Zenodo:
 ```
-DOI: 10.5281/zenodo.18858762
+DOI: 10.5281/zenodo.18859486
 ```
 
 ---
@@ -540,7 +540,7 @@ If you use this code in your research, please cite:
 Dai F. et al.
 MM-DLS: Multimodal Deep Learning Survival Model.
 GitHub repository.
-DOI: [10.5281/zenodo.18858762](https://doi.org/10.5281/zenodo.18858762)
+DOI: [10.5281/zenodo.18859486](https://doi.org/10.5281/zenodo.18859486)
 ```
 Machine-readable citation metadata is provided in:
 
