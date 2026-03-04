@@ -332,9 +332,8 @@ These scripts reproduce two commonly used methodological paradigms in medical im
 
 Both baselines are trained using the same input cohort used for the MM-DLS model and are evaluated using the same survival metrics (C-index and time-dependent AUC).
 
----
 
-# Radiomics + Cox Survival Model
+### Radiomics + Cox Survival Model
 
 File:
 
@@ -344,7 +343,7 @@ baselines/radiomics_cox.py
 
 This baseline implements a classical radiomics-based survival prediction pipeline, which is widely used in oncologic imaging studies.
 
-### Pipeline Overview
+#### Pipeline Overview
 
 The workflow consists of four steps:
 
@@ -353,7 +352,7 @@ The workflow consists of four steps:
 3. Feature normalization  
 4. Cox proportional hazards modeling
 
-### Feature Extraction
+#### Feature Extraction
 
 Radiomics features are extracted from CT images using **PyRadiomics**, including:
 
@@ -375,7 +374,7 @@ Neighbouring Gray Tone Difference Matrix (NGTDM)
 
 A total of approximately **100–120 radiomics features** are generated per lesion.
 
-### Feature Processing
+#### Feature Processing
 
 The following preprocessing steps are applied:
 
@@ -383,7 +382,7 @@ The following preprocessing steps are applied:
 - Removal of near-zero variance features  
 - Optional correlation filtering  
 
-### Survival Model
+#### Survival Model
 
 The processed radiomics features are used to train a **Cox proportional hazards model**.
 
@@ -393,7 +392,7 @@ Disease-Free Survival (DFS)
 
 Overall Survival (OS)
 
-### Evaluation Metrics
+#### Evaluation Metrics
 
 Performance is evaluated using:
 
@@ -403,7 +402,7 @@ Time-dependent ROC AUC (1-year, 3-year, and 5-year survival)
 
 These metrics match those reported in the manuscript.
 
-### Running the Baseline
+#### Running the Baseline
 
 Example command:
 
@@ -423,9 +422,8 @@ results/
 ├── cindex_results.json
 ```
 
----
 
-# CT-CNN Survival Model
+### CT-CNN Survival Model
 
 File:
 
@@ -435,7 +433,7 @@ baselines/ct_cnn_survival.py
 
 This baseline implements a **single-modality deep learning survival prediction model using CT images only**, which represents a commonly used architecture in imaging-based prognosis studies.
 
-### Model Architecture
+#### Model Architecture
 
 The model contains three components:
 
@@ -463,7 +461,7 @@ Fully connected layers
 
 Cox proportional hazards regression layer
 
-### Training Objective
+####  Training Objective
 
 The model is optimized using **Cox partial likelihood loss**, defined as:
 
@@ -473,7 +471,7 @@ where:
 
 h_i is the predicted risk score.
 
-### Input Data
+#### Input Data
 
 The model uses only CT imaging data.
 
@@ -498,7 +496,7 @@ Kaplan–Meier survival stratification
 
 Time-dependent ROC curves
 
-### Running the Baseline
+#### Running the Baseline
 
 Example command:
 
