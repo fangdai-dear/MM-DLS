@@ -19,13 +19,13 @@ The MM-DLS framework integrates **multimodal imaging features, radiomics feature
 
 # 📑 Table of Contents
 
-- [Overview](#overview)
+- [Overview](#Overview)
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Dataset Preparation](#dataset-preparation)
 - [Training the Model](#training-the-model)
-- [Baseline Models](#Baseline Models)
+- [Baseline Models](#Baseline-Models)
 - [Running Evaluation](#running-evaluation)
 - [Minimal Test](#minimal-test)
 - [Reproducing Results](#reproducing-results)
@@ -333,7 +333,7 @@ These scripts reproduce two commonly used methodological paradigms in medical im
 Both baselines are trained using the same input cohort used for the MM-DLS model and are evaluated using the same survival metrics (C-index and time-dependent AUC).
 
 
-### Radiomics + Cox Survival Model
+### 1. Radiomics + Cox Survival Model
 
 File:
 
@@ -364,11 +364,7 @@ First-order features
 
 Texture features
 
-Gray Level Co-occurrence Matrix (GLCM)
-
-Gray Level Run Length Matrix (GLRLM)
-
-Gray Level Size Zone Matrix (GLSZM)
+Gray Level Co-occurrence Matrix (GLCM); Gray Level Run Length Matrix (GLRLM); Gray Level Size Zone Matrix (GLSZM)
 
 Neighbouring Gray Tone Difference Matrix (NGTDM)
 
@@ -383,24 +379,12 @@ The following preprocessing steps are applied:
 - Optional correlation filtering  
 
 #### Survival Model
-
 The processed radiomics features are used to train a **Cox proportional hazards model**.
-
-The Cox model estimates patient-level risk scores for:
-
-Disease-Free Survival (DFS)
-
-Overall Survival (OS)
+The Cox model estimates patient-level risk scores for: Disease-Free Survival (DFS); Overall Survival (OS)
 
 #### Evaluation Metrics
 
-Performance is evaluated using:
-
-Concordance Index (C-index)
-
-Time-dependent ROC AUC (1-year, 3-year, and 5-year survival)
-
-These metrics match those reported in the manuscript.
+Performance is evaluated using: Concordance Index (C-index); Time-dependent ROC AUC (1-year, 3-year, and 5-year survival); These metrics match those reported in the manuscript.
 
 #### Running the Baseline
 
@@ -423,7 +407,7 @@ results/
 ```
 
 
-### CT-CNN Survival Model
+### 2. CT-CNN Survival Model
 
 File:
 
@@ -435,31 +419,19 @@ This baseline implements a **single-modality deep learning survival prediction m
 
 #### Model Architecture
 
-The model contains three components:
-
-CT Feature Encoder
+The model contains three components: CT Feature Encoder
 
 A convolutional neural network (CNN) extracts imaging features from CT slices.
 
-Example backbone:
-
-ResNet-18 / ResNet-34
+Example backbone: ResNet-18 / ResNet-34
 
 Feature Aggregation
 
-Slice-level features are aggregated into a patient-level representation using:
-
-Average pooling  
-or  
-Attention pooling
+Slice-level features are aggregated into a patient-level representation using: Average pooling or Attention pooling
 
 Survival Prediction Head
 
-The aggregated feature vector is fed into a survival prediction module:
-
-Fully connected layers
-
-Cox proportional hazards regression layer
+The aggregated feature vector is fed into a survival prediction module: Fully connected layers; Cox proportional hazards regression layer
 
 ####  Training Objective
 
@@ -467,9 +439,7 @@ The model is optimized using **Cox partial likelihood loss**, defined as:
 
 L = − Σ_i (h_i − log Σ_j exp(h_j))
 
-where:
-
-h_i is the predicted risk score.
+where: h_i is the predicted risk score.
 
 #### Input Data
 
@@ -478,23 +448,14 @@ The model uses only CT imaging data.
 Inputs:
 
 ```
-CT images
-Tumor segmentation masks
-Survival time
-Event indicator
+CT images; Tumor segmentation masks; Survival time; Event indicator
 ```
 
 No PET or clinical variables are used.
 
-### Evaluation
+#### Evaluation
 
-The model predicts patient-level risk scores, which are evaluated using:
-
-C-index
-
-Kaplan–Meier survival stratification
-
-Time-dependent ROC curves
+The model predicts patient-level risk scores, which are evaluated using: C-index; Kaplan–Meier survival stratification; Time-dependent ROC curves
 
 #### Running the Baseline
 
@@ -516,7 +477,7 @@ results/
 ├── cindex_results.json
 ```
 
-
+---
 # Comparison with the Proposed Model
 
 All baseline models were evaluated using the same dataset partitions and evaluation metrics as MM-DLS.
@@ -539,7 +500,6 @@ These design choices enable MM-DLS to achieve improved prognostic prediction per
 # Reproducibility
 
 All baseline experiments were conducted using the same training pipeline, dataset splits, and evaluation protocols as the MM-DLS model to ensure fair comparison and reproducibility.
-
 ```
 
 ---
@@ -547,15 +507,12 @@ All baseline experiments were conducted using the same training pipeline, datase
 # 💻 Code Availability
 
 The source code used for model development and analysis is publicly available at:
-
 ```
 https://github.com/XXXX/MM-DLS
 ```
-
 A citable archived version of the repository is available via Zenodo:
-
 ```
-DOI: 10.5281/zenodo.xxxxxx
+DOI: 10.5281/zenodo.18858762
 ```
 
 ---
@@ -570,8 +527,6 @@ See:
 LICENSE
 ```
 
-for details.
-
 ---
 
 # 📖 Citation
@@ -581,27 +536,16 @@ If you use this code in your research, please cite:
 ```
 Dai F. et al.
 MM-DLS: Multimodal Deep Learning Survival Model.
-
 GitHub repository.
-DOI: 10.5281/zenodo.xxxxxx
+DOI: [10.5281/zenodo.18858762](https://doi.org/10.5281/zenodo.18858762)
 ```
-
 Machine-readable citation metadata is provided in:
 
 ```
 CITATION.cff
 ```
-
----
-
 # 🤝 Acknowledgements
-
 This work integrates multimodal medical imaging and clinical data to enable robust survival prediction and risk stratification for oncology applications.
-
 We thank all collaborators and clinical contributors involved in data collection and annotation.
-
----
-
 # ⭐ If this repository helps your research
-
 Please consider **starring the repository** on GitHub.
