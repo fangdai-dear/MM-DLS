@@ -500,7 +500,7 @@ These design choices enable MM-DLS to achieve improved prognostic prediction per
 # Reproducibility
 
 All baseline experiments were conducted using the same training pipeline, dataset splits, and evaluation protocols as the MM-DLS model to ensure fair comparison and reproducibility.
-```
+
 
 ---
 
@@ -508,7 +508,7 @@ All baseline experiments were conducted using the same training pipeline, datase
 
 The source code used for model development and analysis is publicly available at:
 ```
-https://github.com/XXXX/MM-DLS
+[https://github.com/fangdai-dear/MM-DLS](https://github.com/fangdai-dear/MM-DLS/)
 ```
 A citable archived version of the repository is available via Zenodo:
 ```
