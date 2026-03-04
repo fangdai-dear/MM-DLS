@@ -1,5 +1,12 @@
 # 🧠 MM-DLS: Multimodal Deep Learning Survival Model
 
+# MM-DLS: Multimodal Deep Learning System for Lung Cancer Analysis
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18859486.svg)](https://doi.org/10.5281/zenodo.18859486)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)]()
+[![Paper](https://img.shields.io/badge/Paper-Nature%20Communications-green.svg)](LINK_TO_PAPER)
+
 Implementation of the multimodal deep learning framework described in the study:
 
 **Assessment of Bone Metastasis via Deep Learning Applied to CT Images**
