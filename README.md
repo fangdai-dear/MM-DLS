@@ -28,7 +28,27 @@ The framework supports both classification (adenocarcinoma vs squamous cell carc
 - **Flexible data simulation and loading:** Includes utilities for synthetic data generation and multi-slice 2D volume processing.
 
 ---
+---
 
+# Repository Structure
+MM-DLS/
+│
+├── mm_dls/ # Core model architecture and dataset classes
+├── MODELS/ # Pretrained or auxiliary model components
+│
+├── train_patient_model.py # Main training script
+├── test.py # Minimal pipeline test
+├── run_sample.ipynb # Example notebook for running inference
+│
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── CITATION.cff
+│
+└── docs/
+├── dataset_format.md
+└── reproduce_results.md
+---
 ## Architecture
 
 The overall MM-DLS system consists of:
@@ -129,8 +149,6 @@ Pretrained MM-DLS models are available for direct download:
 - **MM-DLS (Full multimodal, best checkpoint)**  
   [⬇️ Download Pretrained Model](https://drive.google.com/file/d/1IcyCwMgCX8wv0NMp84U4wlzhLoXH7ayx/view?usp=drive_link) Size 1.3 MB
 The MM-DLS model is intentionally lightweight (~1.3 MB), as it employs compact CNN encoders and MLP-based multimodal fusion rather than large pretrained backbones, enabling efficient deployment and fast inference.
-
-
 
 After downloading, place the model files under the `./MODEL/` directory:
 
