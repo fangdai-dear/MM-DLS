@@ -184,7 +184,7 @@ pet.npy
 
 ⚠️ **Data Availability**
 
-Due to **patient privacy and institutional ethical regulations**, the clinical datasets used in this study cannot be publicly released.
+The minimum dataset necessary for interpreting, verifying, and extending the research is provided at [[Multimodal_Lung_Cancer_Dataset-CT-Mask-Clinical](https://huggingface.co/datasets/FangDai/Multimodal_Lung_Cancer_Dataset-CT-Mask-Clinical)]. The dataset includes various types of data, and the data format can be referenced there for consistency.
 
 ---
 
@@ -405,16 +405,11 @@ results/
 ├── os_predictions.csv
 ├── cindex_results.json
 ```
-
-
 ### 2. CT-CNN Survival Model
-
 File:
-
 ```
 baselines/ct_cnn_survival.py
 ```
-
 This baseline implements a **single-modality deep learning survival prediction model using CT images only**, which represents a commonly used architecture in imaging-based prognosis studies.
 
 #### Model Architecture
@@ -432,14 +427,6 @@ Slice-level features are aggregated into a patient-level representation using: A
 Survival Prediction Head
 
 The aggregated feature vector is fed into a survival prediction module: Fully connected layers; Cox proportional hazards regression layer
-
-####  Training Objective
-
-The model is optimized using **Cox partial likelihood loss**, defined as:
-
-L = − Σ_i (h_i − log Σ_j exp(h_j))
-
-where: h_i is the predicted risk score.
 
 #### Input Data
 
