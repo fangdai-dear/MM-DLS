@@ -27,7 +27,7 @@ The framework supports both classification (adenocarcinoma vs squamous cell carc
 - **Survival modeling:** Incorporates Cox Proportional Hazards loss for survival time prediction.
 - **Flexible data simulation and loading:** Includes utilities for synthetic data generation and multi-slice 2D volume processing.
 
----
+
 
 ## Architecture
 
