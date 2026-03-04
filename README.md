@@ -20,18 +20,18 @@ The MM-DLS framework integrates **multimodal imaging features, radiomics feature
 # 📑 Table of Contents
 
 - [Overview](#Overview)
-- [Repository Structure](#repository-structure)
-- [Installation](#installation)
-- [Dependencies](#dependencies)
-- [Dataset Preparation](#dataset-preparation)
-- [Training the Model](#training-the-model)
+- [Repository Structure](#Repository-Structure)
+- [Installation](#Installation)
+- [Dependencies](#Dependencies)
+- [Dataset Preparation](#Dataset-Preparation)
+- [Training the Model](#Training-the-Model)
 - [Baseline Models](#Baseline-Models)
-- [Running Evaluation](#running-evaluation)
-- [Minimal Test](#minimal-test)
-- [Reproducing Results](#reproducing-results)
-- [Code Availability](#code-availability)
-- [License](#license)
-- [Citation](#citation)
+- [Running Evaluation](#Running-Evaluation)
+- [Minimal Test](#Minimal-Test)
+- [Reproducing Results](#Reproducing-Results)
+- [Code Availability](#Code-Availability)
+- [License](#License)
+- [Citation](#Citation)
 
 ---
 
